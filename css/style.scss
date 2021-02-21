@@ -1,0 +1,415 @@
+//*------------------*
+//*  カラーとフォント
+//*------------------*
+
+//color
+$font-color__black:#333333;
+$font-color__white:#FFFFFF;
+
+//font-family
+$font-main:'Montserrat', sans-serif;;
+$font-ja:'Noto Sans JP', sans-serif;
+
+//*------------------*
+//*  レスポンシブ
+//*------------------*
+
+//ブレイクポイント
+$tb: 768px; //タブレット
+$mb: 375px; //スマホ
+
+//@mediaのフォーマット
+// タブレット
+@mixin tablet {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+//スマホ
+@mixin mobile {
+  @media screen and (max-width: $mb) {
+    @content;
+  }
+}
+
+//*------------------*
+//*  font-size定義
+//*------------------*
+//$sizeにpx表示を入れて使う
+
+@mixin rem($size) {
+  font-size: $size + px; /*IE9以前に対応する*/
+  font-size: ($size / 16) + rem;
+}
+
+//*------------------*
+//*  base(共通)
+//*------------------*
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  @include rem(16);
+  letter-spacing: 0.1em;
+  color: $font-color__black;
+  font-family: $font-ja;
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+//sectionの共通inner設定
+.section__inner {
+  max-width: 1270px;
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+.btn{
+  width: 160px;
+  color: #fff;
+  @include rem(12);
+  font-weight: bold;
+  line-height: 36px;
+  background-color: #000;
+}
+
+//*------------------*
+//*  header
+//*------------------*
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+
+  &__inner{
+    max-width: 1610px;
+    margin: 0 auto;
+    padding: 0 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo{
+    width: 260px;
+
+    a{
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__menu{
+    display: flex;
+    align-items: center;
+
+    p{
+      @include rem(10);
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  .burger__btn{
+    display: block;
+    position: relative;
+    width: 22px;
+    height: 12px;
+    margin-right: 7px;
+    background-color: transparent;
+    border: none;
+
+    .bar{
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .top{
+      position: absolute;
+      top: 0;
+    }
+    .middle{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .bottom{
+      position: absolute;
+      bottom: 0;
+    }
+
+  }
+}
+
+/*-----------------
+/*ファーストビュー
+-------------------*/
+.fv{
+  width: 100%;
+  position: relative;
+
+  &__img{
+    width: 76vw;
+    min-height: 640px;
+    padding-bottom: 100px;
+
+  }
+
+  &__img::after{
+    content: '';
+    width: 54vw;
+    height: 740px;
+    background-color: #222222;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -10;
+  }
+
+  &__copy{
+    position: absolute;
+    top: 164px;
+    left: 67vw;
+    z-index: 10;
+    color: $font-color__white;
+    letter-spacing: 0;
+    line-height: 1.17;
+
+    p{
+      @include rem(20);
+      margin: 0;
+    }
+  }
+
+  .copy__ttl{
+    @include rem(72);
+    font-weight: 400;
+    margin-top: 4px;    
+  }
+
+}
+
+/*-----------------
+/*アバウト
+-------------------*/
+
+.about{
+  margin-top: 120px;
+
+  &__bg{
+    width: 100%;
+    height: 607px;
+    background-image: url(/img/about-img@2x.jpg);
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+  }
+
+  &__contents{
+    width: 590px;
+    background-color: #fff;
+    color: $font-color__black;
+    position: absolute;
+    top: 110px;
+    left: 30px;
+      
+  }
+
+  &__ttl{
+    @include rem(32);
+    font-weight: 400;
+    margin-top: 46px;
+    margin-left: 30px;
+  }
+
+  &__text{
+    width: 530px;
+    height: 152px;
+    margin-top: 30px;
+    margin-left: 30px;
+    @include rem(13.5);
+    font-family: $font-ja;
+    letter-spacing: 0;
+    line-height: 2.0;
+  }
+
+  .btn{
+    margin-bottom: 50px;
+    margin-left: 30px;
+  }
+
+}
+
+/*-----------------
+/*ワークス/カルチャー（イントロ）
+-------------------*/
+
+.intro{
+  background-color: #F0F0F0;
+  padding-top: 176px;
+  margin-top: -100px;
+
+  .section__inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+
+  &__card{
+    width: 520px;
+    margin: 0 2px 60px;
+    }
+
+  &__ttl{
+    @include rem(32);
+    font-weight: 400;
+    margin: 0 0 30px;
+  }
+
+  &__text{
+    @include rem(16);
+    font-family: $font-ja;
+    letter-spacing: 0;
+    margin: 27px 0;
+  }
+
+}
+
+/*-----------------
+/*ワークス/カルチャー（イントロ）
+-------------------*/
+
+.topics{
+  margin-top: 56px;
+
+  &__ttl{
+    @include rem(32);
+    font-weight: 400;
+    margin-bottom: 29px;
+    margin-right: auto;
+  }
+
+  &__list{
+    width: 700px;
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .list__item{
+    margin-bottom: 29px;
+
+    &__link{
+      display: block;
+    }
+
+    .date{
+      @include rem(10);
+      font-weight: 500;
+      color: #CECECE;
+      margin: 0 0 9px;
+    }
+    .text{
+      @include rem(14);
+      font-family: $font-ja;
+      font-weight: bold;
+      color: #333;
+      margin: 0;
+      padding: 0 0 10px;
+      border-bottom: 1px solid #DDDDDD
+    }
+
+  }
+
+  .btn{
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+  }
+
+}
+
+/*-----------------
+/*コンタクト
+-------------------*/
+
+.contact{
+  background-color: #F2F2F2;
+  margin-top: 60px;
+
+  .section__inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__contents{
+    width: 440px;
+  }
+
+  &__ttl{
+    @include rem(32);
+    font-weight: 400;
+    margin: 128px 0 30px;
+  }
+
+  &__text{
+    @include rem(16);
+    font-family: $font-ja;
+    letter-spacing: 0;
+    margin-bottom: 30px;
+  }
+
+  &__img{
+    width: 580px;
+    margin: 60px 0 120px;
+
+  }
+}
+
+/*-----------------
+/*フッター
+-------------------*/
+
+.footer{
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  background-color: #525252;
+  color: #fff;
+  text-align: center;
+  @include rem(10);
+  font-weight: 500;
+
+  &__text{
+    padding-top: 20px;
+  }
+
+}
