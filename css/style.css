@@ -101,12 +101,13 @@ button {
           align-items: center;
 }
 
-.header__menu p {
+.header__menu .menu {
   font-size: 10px;
   /*IE9以前に対応する*/
   font-size: 0.625rem;
   color: #fff;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .header .burger__btn {
@@ -148,20 +149,13 @@ button {
 /*ファーストビュー
 -------------------*/
 .fv {
-  width: 100%;
-  position: relative;
+  height: 100vh;
 }
 
-.fv__img {
-  width: 76vw;
-  min-height: 640px;
-  padding-bottom: 100px;
-}
-
-.fv__img::after {
+.fv::after {
   content: '';
-  width: 54vw;
-  height: 740px;
+  width: 54.2%;
+  height: 100%;
   background-color: #222222;
   position: absolute;
   top: 0;
@@ -169,10 +163,21 @@ button {
   z-index: -10;
 }
 
+.fv__img {
+  width: 76vw;
+  min-height: 86.4%;
+  background-image: url(/img/kv-img@2x.jpg);
+  background-position: top;
+  background-size: cover;
+  position: relative;
+}
+
 .fv__copy {
   position: absolute;
-  top: 164px;
-  left: 67vw;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
   z-index: 10;
   color: #FFFFFF;
   letter-spacing: 0;
@@ -186,6 +191,14 @@ button {
   margin: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .fv__copy p {
+    font-size: 16px;
+    /*IE9以前に対応する*/
+    font-size: 1rem;
+  }
+}
+
 .fv .copy__ttl {
   font-size: 72px;
   /*IE9以前に対応する*/
@@ -194,29 +207,48 @@ button {
   margin-top: 4px;
 }
 
+@media screen and (max-width: 768px) {
+  .fv .copy__ttl {
+    font-size: 56px;
+    /*IE9以前に対応する*/
+    font-size: 3.5rem;
+  }
+}
+
 /*-----------------
 /*アバウト
 -------------------*/
 .about {
   margin-top: 120px;
+  position: relative;
 }
 
 .about__bg {
   width: 100%;
-  height: 607px;
+  padding: 110px 0 110px 50px;
   background-image: url(/img/about-img@2x.jpg);
   background-size: cover;
-  background-position: bottom;
-  position: relative;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .about__bg {
+    padding: 10vw 0;
+  }
 }
 
 .about__contents {
-  width: 590px;
+  max-width: 590px;
   background-color: #fff;
   color: #333333;
-  position: absolute;
-  top: 110px;
-  left: 30px;
+  padding: 50px 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .about__contents {
+    width: 90%;
+    margin: 0 4vw;
+  }
 }
 
 .about__ttl {
@@ -224,15 +256,19 @@ button {
   /*IE9以前に対応する*/
   font-size: 2rem;
   font-weight: 400;
-  margin-top: 46px;
-  margin-left: 30px;
+  margin: 0;
+}
+
+@media screen and (max-width: 375px) {
+  .about__ttl {
+    font-size: 28px;
+    /*IE9以前に対応する*/
+    font-size: 1.75rem;
+  }
 }
 
 .about__text {
-  width: 530px;
-  height: 152px;
-  margin-top: 30px;
-  margin-left: 30px;
+  max-width: 530px;
   font-size: 13.5px;
   /*IE9以前に対応する*/
   font-size: 0.84375rem;
@@ -241,9 +277,23 @@ button {
   line-height: 2.0;
 }
 
+@media screen and (max-width: 768px) {
+  .about__text {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .about__text {
+    font-size: 14px;
+    /*IE9以前に対応する*/
+    font-size: 0.875rem;
+  }
+}
+
 .about .btn {
-  margin-bottom: 50px;
-  margin-left: 30px;
+  margin-top: 30px;
 }
 
 /*-----------------
@@ -289,7 +339,7 @@ button {
 }
 
 /*-----------------
-/*ワークス/カルチャー（イントロ）
+/*トピックス
 -------------------*/
 .topics {
   margin-top: 56px;
@@ -308,6 +358,13 @@ button {
   width: 700px;
   margin-left: auto;
   padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .topics__list {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .topics .list__item {
@@ -339,10 +396,24 @@ button {
   border-bottom: 1px solid #DDDDDD;
 }
 
+@media screen and (max-width: 375px) {
+  .topics .list__item .text {
+    font-size: 12px;
+    /*IE9以前に対応する*/
+    font-size: 0.75rem;
+  }
+}
+
 .topics .btn {
   display: block;
   margin-top: 30px;
   margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .topics .btn {
+    margin: 0;
+  }
 }
 
 /*-----------------
@@ -351,6 +422,12 @@ button {
 .contact {
   background-color: #F2F2F2;
   margin-top: 60px;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact {
+    padding-bottom: 80px;
+  }
 }
 
 .contact .section__inner {
@@ -362,10 +439,37 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact .section__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 .contact__contents {
   width: 440px;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact__contents {
+    width: 580px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact__contents {
+    width: 100%;
+  }
 }
 
 .contact__ttl {
@@ -373,7 +477,6 @@ button {
   /*IE9以前に対応する*/
   font-size: 2rem;
   font-weight: 400;
-  margin: 128px 0 30px;
 }
 
 .contact__text {
@@ -386,8 +489,14 @@ button {
 }
 
 .contact__img {
-  width: 580px;
+  max-width: 580px;
   margin: 60px 0 120px;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact__img {
+    margin-bottom: 26px;
+  }
 }
 
 /*-----------------
@@ -407,6 +516,7 @@ button {
 }
 
 .footer__text {
+  margin: 0;
   padding-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */
