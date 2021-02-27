@@ -69,6 +69,11 @@ a{
   margin: 0;
   padding: 0;
   text-decoration: none;
+
+  :hover{
+    opacity: .7;
+    transition: .3s;
+  }
 }
 
 //sectionの共通inner設定
@@ -116,6 +121,9 @@ button{
   &__logo{
     width: 260px;
 
+    @include mobile(){
+      width: 189px;
+    }
     a{
       display: flex;
       align-items: center;
@@ -133,6 +141,8 @@ button{
       text-transform: uppercase;
     }
   }
+
+  
 
   .burger__btn{
     display: block;
@@ -204,6 +214,11 @@ button{
     color: $font-color__white;
     letter-spacing: 0;
     line-height: 1.17;
+
+    @include tablet(){
+      right: -15%;
+      transform: translate(0,-50%);
+    }
 
     p{
       @include rem(20);
