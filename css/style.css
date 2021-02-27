@@ -30,6 +30,12 @@ a {
   text-decoration: none;
 }
 
+a :hover {
+  opacity: .7;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
 .section__inner {
   max-width: 1270px;
   margin: 0 auto;
@@ -81,6 +87,12 @@ button {
 
 .header__logo {
   width: 260px;
+}
+
+@media screen and (max-width: 375px) {
+  .header__logo {
+    width: 189px;
+  }
 }
 
 .header__logo a {
@@ -182,6 +194,14 @@ button {
   color: #FFFFFF;
   letter-spacing: 0;
   line-height: 1.17;
+}
+
+@media screen and (max-width: 768px) {
+  .fv__copy {
+    right: -15%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
 }
 
 .fv__copy p {
