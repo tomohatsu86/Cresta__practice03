@@ -107,7 +107,7 @@ button{
 .header {
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 20;
 
   &__inner{
     max-width: 1610px;
@@ -133,6 +133,7 @@ button{
   &__menu{
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     .menu{
       @include rem(10);
@@ -141,8 +142,6 @@ button{
       text-transform: uppercase;
     }
   }
-
-  
 
   .burger__btn{
     display: block;
@@ -175,6 +174,50 @@ button{
       position: absolute;
       bottom: 0;
     }
+
+  }
+  
+  &__nav{
+    // display: none;
+    width: 36vw;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, .95);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+
+    @include tablet(){
+      width: 70vw;
+    }
+  }
+
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: 180px;
+}
+
+.nav__item{
+  @include rem(20);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+
+  img{
+    width: 42.5px;
+  }
+  a{
+    color: #fff;
+  }
+
+  @include tablet(){
+    @include rem(16);
 
   }
 }
@@ -210,7 +253,7 @@ button{
     top: 50%;
     right: 0;
     transform: translate(50%,-50%);
-    z-index: 10;
+    z-index: 5;
     color: $font-color__white;
     letter-spacing: 0;
     line-height: 1.17;
@@ -249,6 +292,10 @@ button{
 .about{
   margin-top: 120px;
   position: relative;
+
+  @include tablet(){
+    margin-top: 80px;
+  }
 
   &__bg{
     width: 100%;
@@ -319,6 +366,10 @@ button{
   padding-top: 176px;
   margin-top: -100px;
 
+  @include tablet(){
+    padding-top: 140px;
+  }
+
   .section__inner{
     display: flex;
     flex-wrap: wrap;
@@ -352,6 +403,10 @@ button{
 
 .topics{
   margin-top: 56px;
+
+  @include tablet(){
+    margin-top: 40px;
+  }
 
   &__ttl{
     @include rem(32);
@@ -419,6 +474,10 @@ button{
 .contact{
   background-color: #F2F2F2;
   margin-top: 60px;
+
+  @include tablet(){
+    margin-top: 40px;
+  }
 
   @media screen and (max-width: 1200px) {
     padding-bottom: 80px;

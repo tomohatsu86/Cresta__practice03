@@ -67,7 +67,7 @@ button {
 .header {
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 20;
 }
 
 .header__inner {
@@ -111,6 +111,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .header__menu .menu {
@@ -157,6 +158,65 @@ button {
   bottom: 0;
 }
 
+.header__nav {
+  width: 36vw;
+  height: 100vh;
+  background-color: rgba(34, 34, 34, 0.95);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav {
+    width: 70vw;
+  }
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin-top: 180px;
+}
+
+.nav__item {
+  font-size: 20px;
+  /*IE9以前に対応する*/
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+}
+
+.nav__item img {
+  width: 42.5px;
+}
+
+.nav__item a {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__item {
+    font-size: 16px;
+    /*IE9以前に対応する*/
+    font-size: 1rem;
+  }
+}
+
 /*-----------------
 /*ファーストビュー
 -------------------*/
@@ -190,7 +250,7 @@ button {
   right: 0;
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
-  z-index: 10;
+  z-index: 5;
   color: #FFFFFF;
   letter-spacing: 0;
   line-height: 1.17;
@@ -241,6 +301,12 @@ button {
 .about {
   margin-top: 120px;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    margin-top: 80px;
+  }
 }
 
 .about__bg {
@@ -325,6 +391,12 @@ button {
   margin-top: -100px;
 }
 
+@media screen and (max-width: 768px) {
+  .intro {
+    padding-top: 140px;
+  }
+}
+
 .intro .section__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -363,6 +435,12 @@ button {
 -------------------*/
 .topics {
   margin-top: 56px;
+}
+
+@media screen and (max-width: 768px) {
+  .topics {
+    margin-top: 40px;
+  }
 }
 
 .topics__ttl {
@@ -442,6 +520,12 @@ button {
 .contact {
   background-color: #F2F2F2;
   margin-top: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    margin-top: 40px;
+  }
 }
 
 @media screen and (max-width: 1200px) {

@@ -16,6 +16,8 @@
         <h1 class="header__logo">
           <a href="#"><img src="/img/site-logo.svg" alt="" class="header__img"></a>
         </h1><!-- /.header__logo -->
+        
+        <!-- バーガーボタン -->
         <div class="header__menu">
           <button class="burger__btn">
             <span class="bar top"></span><!-- /.bar -->
@@ -26,6 +28,18 @@
         </div><!-- /.header__menu -->
       </div><!-- /.header__inner -->
     </header><!-- /.header -->
+    
+    <!-- ナビケーション -->
+    <nav class="header__nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#"><img src="/img/logo.svg" alt="DEGSMILE INC."></a></li>
+        <li class="nav__item"><a href="#about">about us</a></li>
+        <li class="nav__item"><a href="#works">works</a></li>
+        <li class="nav__item"><a href="#culture">culture</a></li>
+        <li class="nav__item"><a href="#topics">topics</a></li>
+        <li class="nav__item"><a href="#contact">contact</a></li>
+      </ul><!-- /.nav__list -->
+    </nav><!-- /.header__nav -->
 
     <!-- メイン -->
     <main>
@@ -44,7 +58,7 @@
       </div><!-- /.fv -->
 
       <!-- アバウト -->
-      <section class="about">
+      <section class="about" id="about">
         <div class="section__inner">
           <div class="about__bg">
             <div class="about__contents">
@@ -62,13 +76,13 @@
       <!-- ワークス/カルチャー（イントロ） -->
       <section class="intro">
         <div class="section__inner">
-          <div class="intro__card">
+          <div class="intro__card" id="works">
             <h2 class="intro__ttl">WORKS</h2><!-- /.intro__ttl -->
             <div class="intro__img"><img src="/img/works-img@2x.jpg" alt=""></div><!-- /.works__img -->
             <p class="intro__text">DIGSMILEの制作実績を紹介します。</p><!-- /.intro__text -->
             <button class="btn">READ MORE</button><!-- /.btn -->
           </div><!-- /.intro__card -->
-          <div class="intro__card">
+          <div class="intro__card" id="culture">
             <h2 class="intro__ttl">CULTURE</h2><!-- /.intro__ttl -->
             <div class="culture__img"><img src="/img/culture-img@2x.jpg" alt=""></div><!-- /.culture__img -->
             <p class="intro__text">DIGSMILEの社内文化について紹介します。</p><!-- /.intro__text -->
@@ -78,7 +92,7 @@
       </section><!-- /.intro -->
 
       <!-- トピックス -->
-      <section class="topics">
+      <section class="topics" id="topics">
         <div class="section__inner">
           <h2 class="topics__ttl">LATEST TOPICS</h2><!-- /.topics__ttl -->
           <ul class="topics__list">
@@ -106,7 +120,7 @@
       </section><!-- /.topics -->
 
       <!-- コンタクト -->
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="section__inner">
           <div class="contact__contents">
             <h2 class="contact__ttl">CONTACT</h2><!-- /.contact__ttl -->
