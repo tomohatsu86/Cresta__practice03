@@ -48,6 +48,11 @@ $mb: 375px; //スマホ
 * {
   box-sizing: border-box;
 }
+
+html{
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -55,10 +60,20 @@ body {
   letter-spacing: 0.1em;
   color: $font-color__black;
   font-family: $font-ja;
+
+  
+  &.noscroll{
+    overflow: hidden;
+  }
 }
-img {
+
+img, svg {
   width: 100%;
   vertical-align: bottom;
+}
+
+svg{
+  fill:currentColor;
 }
 
 ul{
@@ -69,6 +84,7 @@ a{
   margin: 0;
   padding: 0;
   text-decoration: none;
+  color:currentColor;
 
   :hover{
     opacity: .7;
@@ -120,6 +136,7 @@ button{
 
   &__logo{
     width: 260px;
+    color:#fff;
 
     @include mobile(){
       width: 189px;
@@ -128,57 +145,14 @@ button{
       display: flex;
       align-items: center;
     }
-  }
 
-  &__menu{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-
-    .menu{
-      @include rem(10);
-      color: #fff;
-      font-weight: bold;
-      text-transform: uppercase;
+    &.black svg path{
+      fill:#222;
+      transition: fill .3s;
     }
   }
-
-  .burger__btn{
-    display: block;
-    position: relative;
-    width: 22px;
-    height: 12px;
-    margin-right: 7px;
-    background-color: transparent;
-    border: none;
-
-    .bar{
-      display: block;
-      width: 100%;
-      height: 2px;
-      background-color: #FFFFFF;
-      position: relative;
-    }
-
-    .top{
-      position: absolute;
-      top: 0;
-    }
-    .middle{
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-    }
-    .bottom{
-      position: absolute;
-      bottom: 0;
-    }
-
-  }
-  
+ 
   &__nav{
-    // display: none;
     width: 36vw;
     height: 100vh;
     background-color: rgba(34, 34, 34, .95);
@@ -186,12 +160,96 @@ button{
     top: 0;
     right: 0;
     z-index: 10;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
 
     @include tablet(){
       width: 70vw;
     }
   }
+}
 
+.header__nav.active{
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform .3s, opacity .3s;
+}
+
+.burger__btn{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 38px;
+  right: 4vw;
+  z-index: 10;
+
+  .bar{
+    display: block;
+    background-color: white;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+  }
+  
+    .top{
+      transform: translateY(-4px);
+      transition: .3s;
+    }
+
+    .middle{
+      transition: .3s;
+    }
+    
+    .bottom{
+      transform: translateY(4px);
+      transition: .3s;
+    }
+
+  .menu{
+    display: block;
+    @include rem(10);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    margin-left: 5px;
+  }
+  
+}
+
+.burger-musk{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.5);
+  z-index: 1;
+}
+
+.bar.black{
+  background-color: #222;
+  transition: .3s;
+}
+.menu.black{
+  color: #222;
+  transition: .3s;
+}
+
+.burger__btn.active{
+  .top{
+    transform: translateY(1px) rotate(45deg);
+    transition: .3s;
+  }
+  .middle{
+    display: none;
+    transition: .3s;
+  }
+  .bottom{
+    transform: translateY(-1px) rotate(-45deg);
+    transition: .3s;
+  }
 }
 
 .nav__list{
