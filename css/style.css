@@ -4,6 +4,10 @@
           box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -15,9 +19,17 @@ body {
   font-family: "Noto Sans JP", sans-serif;
 }
 
-img {
+body.noscroll {
+  overflow: hidden;
+}
+
+img, svg {
   width: 100%;
   vertical-align: bottom;
+}
+
+svg {
+  fill: currentColor;
 }
 
 ul {
@@ -28,6 +40,7 @@ a {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  color: currentColor;
 }
 
 a :hover {
@@ -87,6 +100,7 @@ button {
 
 .header__logo {
   width: 260px;
+  color: #fff;
 }
 
 @media screen and (max-width: 375px) {
@@ -104,58 +118,10 @@ button {
           align-items: center;
 }
 
-.header__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-}
-
-.header__menu .menu {
-  font-size: 10px;
-  /*IE9以前に対応する*/
-  font-size: 0.625rem;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.header .burger__btn {
-  display: block;
-  position: relative;
-  width: 22px;
-  height: 12px;
-  margin-right: 7px;
-  background-color: transparent;
-  border: none;
-}
-
-.header .burger__btn .bar {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #FFFFFF;
-  position: relative;
-}
-
-.header .burger__btn .top {
-  position: absolute;
-  top: 0;
-}
-
-.header .burger__btn .middle {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.header .burger__btn .bottom {
-  position: absolute;
-  bottom: 0;
+.header__logo.black svg path {
+  fill: #222;
+  -webkit-transition: fill .3s;
+  transition: fill .3s;
 }
 
 .header__nav {
@@ -166,12 +132,123 @@ button {
   top: 0;
   right: 0;
   z-index: 10;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  -webkit-transition: opacity .3s, -webkit-transform .3s;
+  transition: opacity .3s, -webkit-transform .3s;
+  transition: transform .3s, opacity .3s;
+  transition: transform .3s, opacity .3s, -webkit-transform .3s;
 }
 
 @media screen and (max-width: 768px) {
   .header__nav {
     width: 70vw;
   }
+}
+
+.header__nav.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  -webkit-transition: opacity .3s, -webkit-transform .3s;
+  transition: opacity .3s, -webkit-transform .3s;
+  transition: transform .3s, opacity .3s;
+  transition: transform .3s, opacity .3s, -webkit-transform .3s;
+}
+
+.burger__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 38px;
+  right: 4vw;
+  z-index: 10;
+}
+
+.burger__btn .bar {
+  display: block;
+  background-color: white;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.burger__btn .top {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.burger__btn .middle {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.burger__btn .bottom {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.burger__btn .menu {
+  display: block;
+  font-size: 10px;
+  /*IE9以前に対応する*/
+  font-size: 0.625rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 5px;
+}
+
+.burger-musk {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.bar.black {
+  background-color: #222;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.menu.black {
+  color: #222;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.burger__btn.active .top {
+  -webkit-transform: translateY(1px) rotate(45deg);
+          transform: translateY(1px) rotate(45deg);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.burger__btn.active .middle {
+  display: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.burger__btn.active .bottom {
+  -webkit-transform: translateY(-1px) rotate(-45deg);
+          transform: translateY(-1px) rotate(-45deg);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .nav__list {
