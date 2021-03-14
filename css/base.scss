@@ -1,0 +1,121 @@
+//*------------------*
+//*  カラーとフォント
+//*------------------*
+
+//color
+$font-color__black:#333333;
+$font-color__white:#FFFFFF;
+
+//font-family
+$font-main:'Montserrat', sans-serif;;
+$font-ja:'Noto Sans JP', sans-serif;
+
+//*------------------*
+//*  レスポンシブ
+//*------------------*
+
+//ブレイクポイント
+$tb: 768px; //タブレット
+$mb: 375px; //スマホ
+
+//@mediaのフォーマット
+// タブレット
+@mixin tablet {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+//スマホ
+@mixin mobile {
+  @media screen and (max-width: $mb) {
+    @content;
+  }
+}
+
+//*------------------*
+//*  font-size定義
+//*------------------*
+//$sizeにpx表示を入れて使う
+
+@mixin rem($size) {
+  font-size: $size + px; /*IE9以前に対応する*/
+  font-size: ($size / 16) + rem;
+}
+
+//*------------------*
+//*  base(共通)
+//*------------------*
+* {
+  box-sizing: border-box;
+}
+
+html{
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  @include rem(16);
+  letter-spacing: 0.1em;
+  color: $font-color__black;
+  font-family: $font-ja;
+
+  
+  &.noscroll{
+    overflow: hidden;
+  }
+}
+
+img, svg {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+svg{
+  fill:currentColor;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color:currentColor;
+  display: inline-block;
+
+  :hover{
+    opacity: .7;
+    transition: .3s;
+  }
+}
+
+//sectionの共通inner設定
+.section__inner {
+  max-width: 1270px;
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+.btn{
+  width: 160px;
+  color: #fff;
+  @include rem(12);
+  font-weight: bold;
+  line-height: 36px;
+  text-align: center;
+  background-color: #000;
+  text-transform: uppercase;
+}
