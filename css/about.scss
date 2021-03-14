@@ -167,23 +167,27 @@
 /*ファーストビュー
 -------------------*/
 .fv{
-  height: 100vh;
+  height: 60vh;
+  min-height: 450px;
+  padding-bottom: 70px;
 
   &::after{
     content: '';
-    width: 54.2%;
-    height: 100%;
-    background-color: #222222;
+    display: block;
     position: absolute;
     top: 0;
     right: 0;
+    width: 50%;
+    height: 60vh;
+    min-height: 450px;
+    background-color: #222222;
     z-index: -10;
   }
 
   &__img{
-    width: 76vw;
-    min-height: 86.4%;
-    background-image: url(/img/kv-img@2x.jpg);
+    width: 76%;
+    min-height: 86%;
+    background-image: url(/img/heading-img@2x.jpg);
     background-position: top;
     background-size: cover;
     position: relative;
@@ -196,7 +200,6 @@
     transform: translate(50%,-50%);
     z-index: 5;
     color: $font-color__white;
-    letter-spacing: 0;
     line-height: 1.17;
 
     @include tablet(){
@@ -207,6 +210,7 @@
     p{
       @include rem(20);
       margin: 0;
+      letter-spacing: 0.005em;
 
       @include tablet(){
         @include rem(16);
@@ -216,265 +220,218 @@
 
   .copy__ttl{
     @include rem(72);
-    font-weight: 400;
+    font-weight: 800;
+    letter-spacing: 0.063em;
     margin-top: 4px;
+    font-family: $font-main;
 
     @include tablet(){
-        @include rem(56);
+        @include rem(52);
     }
   }
 
 }
 
 /*-----------------
-/*アバウト
+/ヴィジョン
 -------------------*/
-
-.about{
+.vision{
   margin-top: 120px;
-  position: relative;
-
-  @include tablet(){
-    margin-top: 80px;
-  }
-
-  &__bg{
-    width: 100%;
-
-    padding: 110px 0 110px 50px;
-    background-image: url(/img/about-img@2x.jpg);
-    background-size: cover;
-    background-position: center;
-
-    @include tablet(){
-      padding: 10vw 0;
-    }
-    
-  }
 
   &__contents{
-    max-width: 590px;
-    background-color: #fff;
-    color: $font-color__black;
-    padding: 50px 30px;
+    width: 60%;
+    min-width: 345px;
+    margin-left: 15%;
 
-    @include tablet(){
-      width: 90%;
-      margin: 0 4vw;
-    }
-      
-  }
-
-  &__ttl{
-    @include rem(32);
-    font-weight: 400;
-    margin: 0;
-    text-transform: uppercase;
-
-    @include mobile(){
-      @include rem(28);
-    }
-  }
-
-  &__text{
-    max-width: 530px;
-    @include rem(13.5);
-    font-family: $font-ja;
-    letter-spacing: 0;
-    line-height: 2.0;
-
-    @include tablet(){
-      width: 100%;
+    @include mobile{
       margin: 0;
     }
-
-    @include mobile(){
-      @include rem(14);
-    }
   }
-
-  .btn{
-    margin-top: 30px;
-  }
-
-}
-
-/*-----------------
-/*ワークス/カルチャー（イントロ）
--------------------*/
-
-.intro{
-  background-color: #F0F0F0;
-  padding-top: 176px;
-  margin-top: -100px;
-
-  @include tablet(){
-    padding-top: 140px;
-  }
-
-  .section__inner{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-  }
-
-  &__card{
-    width: 520px;
-    margin: 0 2px 60px;
-    }
 
   &__ttl{
     @include rem(32);
-    font-weight: 400;
-    margin: 0 0 30px;
+    font-family: $font-main;
+    font-weight: 800;
+    margin: 0 0 27px;
     text-transform: uppercase;
+
+  }
+
+  &__sub-ttl{
+    font-family:'YuGothic';
+    @include rem(24);
+    letter-spacing: 0.005em;
+    margin-left: 16px;
+    margin-bottom: 27px;
+
+    @include tablet{
+      font-family: $font-ja;
+    }
+
+    @include mobile{
+      margin: 0 0 27px;
+      letter-spacing: 0;
+    }
   }
 
   &__text{
     @include rem(16);
     font-family: $font-ja;
     letter-spacing: 0;
-    margin: 27px 0;
-  }
+    margin-left: 16px;
 
-}
-
-/*-----------------
-/*トピックス
--------------------*/
-
-.topics{
-  margin-top: 56px;
-
-  @include tablet(){
-    margin-top: 40px;
-  }
-
-  &__ttl{
-    @include rem(32);
-    font-weight: 400;
-    margin-bottom: 29px;
-    margin-right: auto;
-    text-transform: uppercase;
-  }
-
-  &__list{
-    width: 700px;
-    margin-left: auto;
-    padding: 0;
-
-    @include tablet(){
-      width: 100%;
+    @include mobile{
       margin: 0;
     }
-  }
+    
 
-  .list__item{
-    margin-bottom: 29px;
+    p{
+      margin-bottom: 45px;
 
-    &__link{
-      display: block;
-    }
-
-    .date{
-      @include rem(10);
-      font-weight: 500;
-      color: #CECECE;
-      margin: 0 0 9px;
-    }
-    .text{
-      @include rem(14);
-      font-family: $font-ja;
-      font-weight: bold;
-      color: #333;
-      margin: 0;
-      padding: 0 0 10px;
-      border-bottom: 1px solid #DDDDDD;
-
-      @include mobile(){
-        @include rem(12);
+      &:last-child{
+        margin-bottom: 0;
       }
     }
-
   }
-
-  .btn{
-    display: block;
-    margin-top: 30px;
-    margin-left: auto;
-    
-    @include tablet(){
-      margin: 0;
-    }
-  }
-
 }
 
 /*-----------------
-/*コンタクト
+/メッセージ
 -------------------*/
-
-.contact{
-  background-color: #F2F2F2;
-  margin-top: 60px;
-
-  @include tablet(){
-    margin-top: 40px;
-  }
-
-  @media screen and (max-width: 1200px) {
-    padding-bottom: 80px;
-  }
-
-  .section__inner{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-
-    @media screen and (max-width: 1200px) {
-      flex-direction: column-reverse;
-      align-items: flex-start;
-    }
-  }
+.message{
+  margin-top: 120px;
 
   &__contents{
-    width: 440px;
-
-    @media screen and (max-width: 1200px) {
-      width: 580px;
-    }
+    max-width: 400px;
+    box-sizing: content-box;
+    padding: 120px 15vw 90px;
+    margin-left: auto;
+    background-color: #F0F0F0;
 
     @include tablet(){
-      width: 100%;
+      padding: 120px 6vw 90px;
+      margin: 0;
     }
 
-  }
-
-  &__ttl{
-    @include rem(32);
-    font-weight: 400;
-    text-transform: uppercase;
+    @include mobile {
+      width: 288px;
     }
-
-  &__text{
-    @include rem(16);
-    font-family: $font-ja;
-    letter-spacing: 0;
-    margin-bottom: 30px;
     
   }
 
   &__img{
-    max-width: 580px;
-    margin: 60px 0 120px;
+    width: 35%;
+    min-width: 320px;
+    margin-bottom: -140px;
+    background-image: url(/img/ceo-img@2x.jpg);
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
 
-    @media screen and (max-width: 1200px) {
-      margin-bottom: 26px;
+    @include tablet(){
+      margin-bottom: -85px;
+    }
+  }
+
+  &__ttl{
+    @include rem(32);
+    font-family: $font-main;
+    font-weight: 800;
+    margin: 0 0 27px;
+    text-transform: uppercase;
+
+    @include mobile {
+      @include rem(31);
+    }
+  }
+
+  &__text{
+    @include rem(16);
+    font-family: $font-ja;
+    letter-spacing: 0;
+    
+    p{
+      margin-bottom: 45px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    @include mobile {
+      @include rem(14);
     }
   }
 }
+
+/*-----------------
+/会社情報
+-------------------*/
+.company{
+  margin-top: 120px;
+
+  &__ttl{
+    @include rem(32);
+    font-family: $font-main;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #DDDDDD;
+  }
+
+  &__info{
+    @include rem(16);
+    width: 73%;
+    text-align: left;
+    margin-left: auto;
+
+    @include tablet{
+      width: 100%;
+      text-align: left;
+      margin: 0;
+    }
+
+    @include mobile{
+      @include rem(14);
+    }
+
+  }
+
+  .table-item{
+    line-height: 55px;
+
+    th,td{
+      border-bottom: 1px solid #DDDDDD;
+    }
+    th{
+      width: 144px;
+    }
+  }
+
+  &__map{
+    margin-top: 40px;
+    width: 100%;
+    padding-top: 32.7%;
+    position: relative;
+
+    iframe{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include mobile{
+      padding-top: 136%;
+    }
+  }
+}
+
 
 /*-----------------
 /*フッター
@@ -483,7 +440,7 @@
 .footer{
   width: 100%;
   height: 50px;
-  margin: 0;
+  margin: 120px 0 0;
   background-color: #525252;
   color: #fff;
   text-align: center;
@@ -493,6 +450,10 @@
   &__text{
     margin: 0;
     padding-top: 20px;
+  }
+
+  @include tablet{
+    margin-top: 80px;
   }
 
 }

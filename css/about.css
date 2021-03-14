@@ -301,24 +301,28 @@ button {
 /*ファーストビュー
 -------------------*/
 .fv {
-  height: 100vh;
+  height: 60vh;
+  min-height: 450px;
+  padding-bottom: 70px;
 }
 
 .fv::after {
   content: '';
-  width: 54.2%;
-  height: 100%;
-  background-color: #222222;
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
+  width: 50%;
+  height: 60vh;
+  min-height: 450px;
+  background-color: #222222;
   z-index: -10;
 }
 
 .fv__img {
-  width: 76vw;
-  min-height: 86.4%;
-  background-image: url(/img/kv-img@2x.jpg);
+  width: 76%;
+  min-height: 86%;
+  background-image: url(/img/heading-img@2x.jpg);
   background-position: top;
   background-size: cover;
   position: relative;
@@ -332,7 +336,6 @@ button {
           transform: translate(50%, -50%);
   z-index: 5;
   color: #FFFFFF;
-  letter-spacing: 0;
   line-height: 1.17;
 }
 
@@ -349,6 +352,7 @@ button {
   /*IE9以前に対応する*/
   font-size: 1.25rem;
   margin: 0;
+  letter-spacing: 0.005em;
 }
 
 @media screen and (max-width: 768px) {
@@ -363,327 +367,259 @@ button {
   font-size: 72px;
   /*IE9以前に対応する*/
   font-size: 4.5rem;
-  font-weight: 400;
+  font-weight: 800;
+  letter-spacing: 0.063em;
   margin-top: 4px;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media screen and (max-width: 768px) {
   .fv .copy__ttl {
-    font-size: 56px;
+    font-size: 52px;
     /*IE9以前に対応する*/
-    font-size: 3.5rem;
+    font-size: 3.25rem;
   }
 }
 
 /*-----------------
-/*アバウト
+/ヴィジョン
 -------------------*/
-.about {
+.vision {
   margin-top: 120px;
-  position: relative;
 }
 
-@media screen and (max-width: 768px) {
-  .about {
-    margin-top: 80px;
-  }
-}
-
-.about__bg {
-  width: 100%;
-  padding: 110px 0 110px 50px;
-  background-image: url(/img/about-img@2x.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-@media screen and (max-width: 768px) {
-  .about__bg {
-    padding: 10vw 0;
-  }
-}
-
-.about__contents {
-  max-width: 590px;
-  background-color: #fff;
-  color: #333333;
-  padding: 50px 30px;
-}
-
-@media screen and (max-width: 768px) {
-  .about__contents {
-    width: 90%;
-    margin: 0 4vw;
-  }
-}
-
-.about__ttl {
-  font-size: 32px;
-  /*IE9以前に対応する*/
-  font-size: 2rem;
-  font-weight: 400;
-  margin: 0;
-  text-transform: uppercase;
+.vision__contents {
+  width: 60%;
+  min-width: 345px;
+  margin-left: 15%;
 }
 
 @media screen and (max-width: 375px) {
-  .about__ttl {
-    font-size: 28px;
-    /*IE9以前に対応する*/
-    font-size: 1.75rem;
+  .vision__contents {
+    margin: 0;
   }
 }
 
-.about__text {
-  max-width: 530px;
-  font-size: 13.5px;
+.vision__ttl {
+  font-size: 32px;
   /*IE9以前に対応する*/
-  font-size: 0.84375rem;
-  font-family: "Noto Sans JP", sans-serif;
-  letter-spacing: 0;
-  line-height: 2.0;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin: 0 0 27px;
+  text-transform: uppercase;
+}
+
+.vision__sub-ttl {
+  font-family: 'YuGothic';
+  font-size: 24px;
+  /*IE9以前に対応する*/
+  font-size: 1.5rem;
+  letter-spacing: 0.005em;
+  margin-left: 16px;
+  margin-bottom: 27px;
 }
 
 @media screen and (max-width: 768px) {
-  .about__text {
-    width: 100%;
+  .vision__sub-ttl {
+    font-family: "Noto Sans JP", sans-serif;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .vision__sub-ttl {
+    margin: 0 0 27px;
+    letter-spacing: 0;
+  }
+}
+
+.vision__text {
+  font-size: 16px;
+  /*IE9以前に対応する*/
+  font-size: 1rem;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0;
+  margin-left: 16px;
+}
+
+@media screen and (max-width: 375px) {
+  .vision__text {
+    margin: 0;
+  }
+}
+
+.vision__text p {
+  margin-bottom: 45px;
+}
+
+.vision__text p:last-child {
+  margin-bottom: 0;
+}
+
+/*-----------------
+/メッセージ
+-------------------*/
+.message {
+  margin-top: 120px;
+}
+
+.message__contents {
+  max-width: 400px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 120px 15vw 90px;
+  margin-left: auto;
+  background-color: #F0F0F0;
+}
+
+@media screen and (max-width: 768px) {
+  .message__contents {
+    padding: 120px 6vw 90px;
     margin: 0;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .about__text {
+  .message__contents {
+    width: 288px;
+  }
+}
+
+.message__img {
+  width: 35%;
+  min-width: 320px;
+  margin-bottom: -140px;
+  background-image: url(/img/ceo-img@2x.jpg);
+  background-position: top;
+  background-size: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .message__img {
+    margin-bottom: -85px;
+  }
+}
+
+.message__ttl {
+  font-size: 32px;
+  /*IE9以前に対応する*/
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin: 0 0 27px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 375px) {
+  .message__ttl {
+    font-size: 31px;
+    /*IE9以前に対応する*/
+    font-size: 1.9375rem;
+  }
+}
+
+.message__text {
+  font-size: 16px;
+  /*IE9以前に対応する*/
+  font-size: 1rem;
+  font-family: "Noto Sans JP", sans-serif;
+  letter-spacing: 0;
+}
+
+.message__text p {
+  margin-bottom: 45px;
+}
+
+.message__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 375px) {
+  .message__text {
     font-size: 14px;
     /*IE9以前に対応する*/
     font-size: 0.875rem;
   }
 }
 
-.about .btn {
-  margin-top: 30px;
-}
-
 /*-----------------
-/*ワークス/カルチャー（イントロ）
+/会社情報
 -------------------*/
-.intro {
-  background-color: #F0F0F0;
-  padding-top: 176px;
-  margin-top: -100px;
+.company {
+  margin-top: 120px;
 }
 
-@media screen and (max-width: 768px) {
-  .intro {
-    padding-top: 140px;
-  }
-}
-
-.intro .section__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.intro__card {
-  width: 520px;
-  margin: 0 2px 60px;
-}
-
-.intro__ttl {
+.company__ttl {
   font-size: 32px;
   /*IE9以前に対応する*/
   font-size: 2rem;
-  font-weight: 400;
-  margin: 0 0 30px;
-  text-transform: uppercase;
-}
-
-.intro__text {
-  font-size: 16px;
-  /*IE9以前に対応する*/
-  font-size: 1rem;
-  font-family: "Noto Sans JP", sans-serif;
-  letter-spacing: 0;
-  margin: 27px 0;
-}
-
-/*-----------------
-/*トピックス
--------------------*/
-.topics {
-  margin-top: 56px;
-}
-
-@media screen and (max-width: 768px) {
-  .topics {
-    margin-top: 40px;
-  }
-}
-
-.topics__ttl {
-  font-size: 32px;
-  /*IE9以前に対応する*/
-  font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: 29px;
-  margin-right: auto;
-  text-transform: uppercase;
-}
-
-.topics__list {
-  width: 700px;
-  margin-left: auto;
-  padding: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .topics__list {
-    width: 100%;
-    margin: 0;
-  }
-}
-
-.topics .list__item {
-  margin-bottom: 29px;
-}
-
-.topics .list__item__link {
-  display: block;
-}
-
-.topics .list__item .date {
-  font-size: 10px;
-  /*IE9以前に対応する*/
-  font-size: 0.625rem;
-  font-weight: 500;
-  color: #CECECE;
-  margin: 0 0 9px;
-}
-
-.topics .list__item .text {
-  font-size: 14px;
-  /*IE9以前に対応する*/
-  font-size: 0.875rem;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: bold;
-  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
   margin: 0;
-  padding: 0 0 10px;
+  text-transform: uppercase;
+  padding-bottom: 30px;
   border-bottom: 1px solid #DDDDDD;
 }
 
-@media screen and (max-width: 375px) {
-  .topics .list__item .text {
-    font-size: 12px;
-    /*IE9以前に対応する*/
-    font-size: 0.75rem;
-  }
-}
-
-.topics .btn {
-  display: block;
-  margin-top: 30px;
+.company__info {
+  font-size: 16px;
+  /*IE9以前に対応する*/
+  font-size: 1rem;
+  width: 73%;
+  text-align: left;
   margin-left: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .topics .btn {
+  .company__info {
+    width: 100%;
+    text-align: left;
     margin: 0;
   }
 }
 
-/*-----------------
-/*コンタクト
--------------------*/
-.contact {
-  background-color: #F2F2F2;
-  margin-top: 60px;
-}
-
-@media screen and (max-width: 768px) {
-  .contact {
-    margin-top: 40px;
+@media screen and (max-width: 375px) {
+  .company__info {
+    font-size: 14px;
+    /*IE9以前に対応する*/
+    font-size: 0.875rem;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .contact {
-    padding-bottom: 80px;
-  }
+.company .table-item {
+  line-height: 55px;
 }
 
-.contact .section__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.company .table-item th, .company .table-item td {
+  border-bottom: 1px solid #DDDDDD;
 }
 
-@media screen and (max-width: 1200px) {
-  .contact .section__inner {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
+.company .table-item th {
+  width: 144px;
 }
 
-.contact__contents {
-  width: 440px;
+.company__map {
+  margin-top: 40px;
+  width: 100%;
+  padding-top: 32.7%;
+  position: relative;
 }
 
-@media screen and (max-width: 1200px) {
-  .contact__contents {
-    width: 580px;
-  }
+.company__map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .contact__contents {
-    width: 100%;
-  }
-}
-
-.contact__ttl {
-  font-size: 32px;
-  /*IE9以前に対応する*/
-  font-size: 2rem;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.contact__text {
-  font-size: 16px;
-  /*IE9以前に対応する*/
-  font-size: 1rem;
-  font-family: "Noto Sans JP", sans-serif;
-  letter-spacing: 0;
-  margin-bottom: 30px;
-}
-
-.contact__img {
-  max-width: 580px;
-  margin: 60px 0 120px;
-}
-
-@media screen and (max-width: 1200px) {
-  .contact__img {
-    margin-bottom: 26px;
+@media screen and (max-width: 375px) {
+  .company__map {
+    padding-top: 136%;
   }
 }
 
@@ -693,7 +629,7 @@ button {
 .footer {
   width: 100%;
   height: 50px;
-  margin: 0;
+  margin: 120px 0 0;
   background-color: #525252;
   color: #fff;
   text-align: center;
@@ -707,4 +643,10 @@ button {
   margin: 0;
   padding-top: 20px;
 }
-/*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width: 768px) {
+  .footer {
+    margin-top: 80px;
+  }
+}
+/*# sourceMappingURL=about.css.map */
