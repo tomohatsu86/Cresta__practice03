@@ -7,10 +7,7 @@ https://crestadesign.org/cording-third/<br>
 ～レスポンシブ対応：9時間1分
 ～jQuery実装：12時間30分<br>
 【about】<br>
-～PC版：
-～レスポンシブ対応：
-～jQuery実装：<br>
+～PC版～レスポンシブ対応：16時間39分<br>
 【contact】<br>
 ～PC版：
 ～レスポンシブ対応：
-～jQuery実装：
