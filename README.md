@@ -9,5 +9,4 @@ https://crestadesign.org/cording-third/<br>
 【about】<br>
 ～PC版～レスポンシブ対応：16時間39分<br>
 【contact】<br>
-～PC版：
-～レスポンシブ対応：
+～PC版～レスポンシブ対応：19時間53分
