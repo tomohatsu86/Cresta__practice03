@@ -1,0 +1,471 @@
+@import "../css/base.scss";
+
+//*------------------*
+//*  header
+//*------------------*
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+
+  &__inner{
+    max-width: 1610px;
+    margin: 0 auto;
+    padding: 0 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo{
+    width: 260px;
+    color:#fff;
+
+    @include mobile(){
+      width: 189px;
+    }
+    a{
+      display: flex;
+      align-items: center;
+    }
+
+    &.black svg path{
+      fill:#222;
+      transition: fill .3s;
+    }
+  }
+
+  &__nav{
+    width: 36vw;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, .95);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
+
+    @include tablet(){
+      width: 70vw;
+    }
+  }
+}
+
+.header__nav.active{
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform .3s, opacity .3s;
+}
+
+.burger__btn{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 38px;
+  right: 4vw;
+  z-index: 10;
+
+  .bar{
+    display: block;
+    background-color: white;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+  }
+  
+    .top{
+      transform: translateY(-4px);
+      transition: .3s;
+    }
+
+    .middle{
+      transition: .3s;
+    }
+    
+    .bottom{
+      transform: translateY(4px);
+      transition: .3s;
+    }
+
+  .menu{
+    display: block;
+    @include rem(10);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    margin-left: 5px;
+  }
+  
+}
+
+.burger-musk{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.5);
+  z-index: 1;
+}
+
+.bar.black{
+  background-color: #222;
+  transition: .3s;
+}
+.menu.black{
+  color: #222;
+  transition: .3s;
+}
+
+.burger__btn.active{
+  .top{
+    transform: translateY(1px) rotate(45deg);
+    transition: .3s;
+  }
+  .middle{
+    display: none;
+    transition: .3s;
+  }
+  .bottom{
+    transform: translateY(-1px) rotate(-45deg);
+    transition: .3s;
+  }
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: 180px;
+}
+
+.nav__item{
+  @include rem(20);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+
+  img{
+    width: 42.5px;
+  }
+  a{
+    color: #fff;
+  }
+
+  @include tablet(){
+    @include rem(16);
+
+  }
+}
+
+/*-----------------
+/*ファーストビュー
+-------------------*/
+.fv{
+  height: 60vh;
+  min-height: 450px;
+  padding-bottom: 120px;
+
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50vh;
+    min-height: 450px;
+    background-color: #222222;
+    z-index: -10;
+  }
+
+  &__img{
+    width: 76%;
+    height: 86%;
+    background-image: url(/img/heading-img_contact@2x.jpg);
+    background-size: cover;
+    background-position:center;
+    position: relative;
+
+    @include mobile{
+
+    }
+  }
+
+  &__copy{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%,-50%);
+    z-index: 5;
+    color: $font-color__white;
+    line-height: 1.17;
+
+    @include tablet(){
+      right: -15%;
+      transform: translate(0,-50%);
+    }
+
+    p{
+      @include rem(20);
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: 0.005em;
+
+      @include tablet(){
+        @include rem(16);
+      }
+
+      @include mobile{
+        text-align: right;
+      }
+    }
+  }
+
+  .copy__ttl{
+    @include rem(72);
+    font-weight: 800;
+    letter-spacing: 0.063em;
+    margin-top: 4px;
+    font-family: $font-main;
+
+    @include tablet(){
+        @include rem(52);
+    }
+  }
+
+  .scroll-item{
+    // display: none;
+
+    &__text{
+      @include rem(12);
+      font-weight: 800;
+      font-family: $font-main;
+      letter-spacing: 0.038em;
+
+      
+      @include mobile{
+        display: block;
+      }
+    }
+
+  }
+
+}
+
+/*-----------------
+/*コンタクトフォーム
+-------------------*/
+.contact{
+
+  input,textarea{
+    resize: none;
+    appearance: none;
+    -webkit-appearance:none;
+    outline: none;
+    border: none;
+  }
+
+  &__inner{
+    max-width: 820px;
+    padding: 0 4vw;
+    margin: 0 auto;
+
+  }
+
+  &__text{
+    @include rem(16);
+    letter-spacing: 0.004em;
+    font-family: $font-ja;
+    margin-bottom: 52px;
+
+    @include mobile{
+      @include rem(14);
+    }
+  }
+
+  &__select{
+    display: block;
+    width: 100%;
+    margin-bottom: 18px;
+
+    @include mobile{
+      font-weight: bold;
+    }
+  }
+
+  .select-item{
+    display: flex;
+    text-align: center;
+    margin-bottom: 42px;
+
+    @include mobile{
+      display: block;
+    }
+  }
+
+  &__radio-btn{
+    text-align: center;
+    
+    input,label:hover{
+      cursor: pointer;
+    }
+
+    input{
+      width: 20px;
+      height: 20px;
+      border: 1px solid #333;
+      border-radius: 50%;
+      vertical-align: -4px;
+      margin-right: 5px;
+
+      &:checked{
+        background-color: #333;
+        border: 4px solid #fff;
+        box-shadow: 0 0 0 1px #333;
+      }
+
+    }
+
+    label{
+      @include rem(16);
+      margin-right: 50px;
+    }
+
+    @include mobile{
+      text-align: left;
+    }
+  }
+
+  span{
+    @include rem(12);
+    color: white;
+    font-family: $font-ja;
+    letter-spacing: 0.04em;
+    background-color: #333;
+    margin-left: 20px;
+    padding: 1px 5px;
+  }
+
+  &-form__item{
+    margin-bottom: 42px;
+    @include rem(16);
+    font-family: $font-ja;
+    letter-spacing: 0.04em;
+
+    label{
+      display: block;
+      margin-bottom: 8px;
+
+      @include mobile{
+        font-weight: bold;
+      }
+    }
+    input{
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #333;
+    }
+    textarea{
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #333;
+    }
+  }
+
+  &__privacy-policy{
+    margin-bottom: 42px;
+
+    &-ttl{
+      display: block;
+      @include rem(16);
+      font-family: $font-main;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #272727;
+      margin-bottom: 10px;
+    }
+
+    &-text{
+      overflow: auto;
+      width: 100%;
+      height: 252px;
+      border: 1px solid #333;
+      padding: 10px;
+
+      @include mobile{
+        @include rem(14);
+      }
+    }
+  }
+
+  &__checkbox{
+    margin-bottom: 42px;
+    text-align: center;
+    @include rem(16);
+
+    input{
+      width: 20px;
+      height: 20px;
+      vertical-align: -7px;
+      border: 1px solid #333;
+
+      &:checked{
+        background-image: url(/img/checked.svg);
+        background-size: 14px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+    
+
+    @include mobile{
+      @include rem(12);
+      letter-spacing: 0.004em;
+      text-align: left;
+    }
+  }
+  
+  .btn{
+    display: block;
+    margin: 0 auto;
+
+    &:hover{
+      opacity: .8;
+      transition: .3s;
+    }
+  }
+}
+
+
+/*-----------------
+/*フッター
+-------------------*/
+
+.footer{
+  width: 100%;
+  height: 50px;
+  margin: 120px 0 0;
+  background-color: #525252;
+  color: #fff;
+  text-align: center;
+  @include rem(10);
+  font-weight: 500;
+
+  &__text{
+    margin: 0;
+    padding-top: 20px;
+  }
+
+  @include tablet{
+    margin-top: 80px;
+  }
+
+}
