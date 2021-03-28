@@ -1,4 +1,4 @@
-@import "../css/base.scss";
+@import "./css/base.scss";
 
 //*------------------*
 //*  header
@@ -187,7 +187,7 @@
   &__img{
     width: 76%;
     height: 86%;
-    background-image: url(/img/heading-img_contact@2x.jpg);
+    background-image: url(../img/heading-img_contact@2x.jpg);
     background-size: cover;
     background-position:center;
     position: relative;
@@ -418,7 +418,7 @@
       border: 1px solid #333;
 
       &:checked{
-        background-image: url(/img/checked.svg);
+        background-image: url(../img/checked.svg);
         background-size: 14px;
         background-repeat: no-repeat;
         background-position: center;
