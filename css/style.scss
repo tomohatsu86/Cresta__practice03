@@ -1,4 +1,4 @@
-@import "../css/base.scss";
+@import "./css/base.scss";
 
 //*------------------*
 //*  header
@@ -183,7 +183,7 @@
   &__img{
     width: 76vw;
     min-height: 86.4%;
-    background-image: url(/img/kv-img@2x.jpg);
+    background-image: url(../img/kv-img@2x.jpg);
     background-position: top;
     background-size: cover;
     position: relative;
@@ -242,7 +242,7 @@
     width: 100%;
 
     padding: 110px 0 110px 50px;
-    background-image: url(/img/about-img@2x.jpg);
+    background-image: url(../img/about-img@2x.jpg);
     background-size: cover;
     background-position: center;
 

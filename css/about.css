@@ -322,7 +322,7 @@ button {
 .fv__img {
   width: 76%;
   min-height: 86%;
-  background-image: url(/img/heading-img@2x.jpg);
+  background-image: url(../img/heading-img@2x.jpg);
   background-position: top;
   background-size: cover;
   position: relative;
@@ -489,7 +489,7 @@ button {
   width: 35%;
   min-width: 320px;
   margin-bottom: -140px;
-  background-image: url(/img/ceo-img@2x.jpg);
+  background-image: url(../img/ceo-img@2x.jpg);
   background-position: top;
   background-size: cover;
   position: relative;
